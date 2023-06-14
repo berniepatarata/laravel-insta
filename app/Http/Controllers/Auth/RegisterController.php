@@ -78,7 +78,7 @@ class RegisterController extends Controller
 
         Mail::send('users.emails.register-confirmation', $details, function($message) use ($user) {
             $message
-                ->from(env('noreply@igram.com'), config('app.name'))
+                ->from(('noreply@igram.com'), config('app.name'))
                 ->to($user->email, $user->name)
                 ->subject('Thank you for registering in Kredo IG App!');
         });
